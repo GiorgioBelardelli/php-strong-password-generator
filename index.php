@@ -16,6 +16,7 @@
     </form>
 
     <?php
+    include 'functions.php';
     $pswLen = $_GET['psw-len'];
     
 
@@ -25,17 +26,6 @@
     }else{
         echo "<br><h3>Devi inserire un numero maggiore di zero<h3>";
     }
-
-    function genPassword($userNum){
-        $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+';
-        // $psw = '';
-    
-        $psw = substr(str_shuffle($caratteri), 0, $userNum);
-        return $psw;
-
-    }
-
-    
 
     ?>
     
