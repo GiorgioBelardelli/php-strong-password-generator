@@ -16,13 +16,17 @@
     </form>
 
     <?php
+    session_start();
+
     include 'functions.php';
     $pswLen = $_GET['psw-len'];
     
 
     if(is_numeric($pswLen) && $pswLen != 0){
         $userPsw = genPassword($pswLen); 
-        echo "<br><h3>Ecco la tua password: $userPsw</h3>";
+        // echo "<br><h3>Ecco la tua password: $userPsw</h3>";
+        $_SESSION['user_password'] = $userPsw;
+        header('Location: show_pass.php');
     }else{
         echo "<br><h3>Devi inserire un numero maggiore di zero<h3>";
     }
